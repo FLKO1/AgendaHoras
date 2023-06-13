@@ -94,7 +94,7 @@ class CitasController extends Controller
     {
     
         $cita->update($request->all());
-        return redirect()->route('citas.index')->with('Exito', 'Cita actualizada con exito');
+        return redirect()->route('citas.inde')->with('Exito', 'Cita actualizada con exito');
 
 
     }
@@ -105,9 +105,8 @@ class CitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cita $cita)
+    public function destroy($id)
     {
-        $cita->delete();
-        return redirect()->route('citas.index')->with('Exito', 'Cita eliminada exitosamente');
+        //
     }
 }

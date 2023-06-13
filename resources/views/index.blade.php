@@ -50,9 +50,7 @@
                 <td>
                     <a href="" class="btn btn-warning">Editar</a>
 
-                    <form action="{{route('citas.destroy',$cita)}}" method="POST" class="d-inline">
-                        @csrf
-                        @method('DELETE')
+                    <form action="" method="post" class="d-inline">
    
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
