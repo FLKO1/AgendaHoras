@@ -22,10 +22,10 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Agendar Hora</a>
+              <a class="nav-link" href="/index">Agendar Hora</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/login">Log in Profesional</a>
+              <a class="nav-link" href="{{auth('login')}}">Log in Profesional</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Acerca de nosotros</a>
