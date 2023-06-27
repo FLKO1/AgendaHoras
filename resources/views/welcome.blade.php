@@ -19,13 +19,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/index">Agendar Hora</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{auth('login')}}">Log in Profesional</a>
+              <a class="nav-link" href="/login">Log in Profesional</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Acerca de nosotros</a>
