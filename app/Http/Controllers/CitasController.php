@@ -27,7 +27,9 @@ class CitasController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $citas=Cita::all();
+        return view('citas.create', compact($citas));
+        
     }
 
     /**
