@@ -22,7 +22,7 @@
               <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/citas">Agendar Hora</a>
+              <a class="nav-link" href="/citas.create">Agendar Hora</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/login">Log in Profesional</a>
