@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h2 class="text-white">CRUD de Citas</h2>
+            <h2 class="text-white">Agendar Hora</h2>
         </div>
         <div>
             <a href="{{route('citas.create')}}" class="btn btn-primary">Crear cita</a>
@@ -14,7 +14,7 @@
     @if (Session::get('Exito'))
         <div class="alert alert-success mt-2">
             <strong>{{Session::get('Exito')}}<br> 
-        </div>
+        </div> 
         
         
     @endif
@@ -48,15 +48,6 @@
                 <td>{{$cita->fecha}}</td>
                 <td>{{$cita->descripcion}}</td>
                 <td>
-                    <a href="" class="btn btn-warning">Editar</a>
-
-                    <form action="" method="post" class="d-inline">
-   
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-
             @endforeach
         </table>
     </div>

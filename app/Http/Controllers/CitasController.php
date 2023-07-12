@@ -9,38 +9,27 @@ use Illuminate\Http\Request;
 
 class CitasController extends Controller
 {
-    /**
-     * Display a listing of the resource.   
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+ 
+    
+     public function index()
     {
         $citas= Cita::latest()->get();
         return view('index',['citas' => $citas]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+ 
+ 
+     public function create()
     {
         $citas=Cita::all();
         return view('citas.create', compact($citas));
         
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-
-    public function store(Request $request): RedirectResponse
+    
+    
+     public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'paciente' => 'required',
@@ -58,23 +47,12 @@ class CitasController extends Controller
 
 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
 
     public function edit(Cita $cita): View
@@ -83,14 +61,6 @@ class CitasController extends Controller
     }
 
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     public function update(Request $request, Cita $cita): RedirectResponse
     {
@@ -101,14 +71,10 @@ class CitasController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Cita $cita)
     {
-        //
+        $cita->delete();
+        return redirect()->route('citas.index')->with('success' , 'Cita Eliminada exitosamente');
     }
 }
