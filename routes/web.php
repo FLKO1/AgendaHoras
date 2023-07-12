@@ -15,9 +15,9 @@ use App\Http\Controllers\CitasController;
 |
 */
 
-Route::view('/login', "login")->name('login');
-Route::view('/registro', "register")->name('registro');
-Route::view('/privada', "secret")->middleware('auth')->name('privada');
+Route::view('login', 'login')->name('login');
+Route::view('/register', "register")->name('register');
+Route::view('home', 'home')->middleware('auth');
 
 Route::post('/validar-registro',[LoginController::class,'register'])->name('validar-registro');
 
@@ -27,6 +27,13 @@ Route::get('/', function () {
 });
 
 
+Route::post('login', function() {
+    $credentials= request()->only('email', 'password');
+    if (Auth::attempt($credentials)){
+        return redirect('home');
+    }
+        return redirect('login');
+});
 
 Route::resource('citas', CitasController::class);
 
